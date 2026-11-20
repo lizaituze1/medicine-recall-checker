@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Recall Checker</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1> Medicine Recall Checker</h1>
+        <p>Look up FDA recalls, most-reported side effects, and official warnings for a medicine</p>
+    </header>
+
+    <main>
+        <form id="search-form" class="search">
+            <input id="drug" type="search" placeholder="Type a medicine name, e.g. ibuprofen"
+                   minlength="2" maxlength="60" autocomplete="off" aria-label="Medicine name" />
+            <button type="submit">Check</button>
+        </form>
+
+        <div class="example">
+            Try:
+            <button type="button" class="chip">ibuprofen</button>
+            <button type="button" class="chip">metformin</button>
+            <button type="button" class="chip">valsartan</button>
+            <button type="button" class="chip">acetaminophen</button>
+        </div>
+
+        <p id="status" role="status"></p>
+
+        <section id="results" class="hidden">
+            <h2 id="result-title"></h2>
+
+            <nav class="tabs">
+                <button type="button" class="tab active" data-tab="recalls">Recalls</button>
+                <button type="button" class="tab" data-tab="effects">Side effects</button>
+                <button type="button" class="tab" data-tab="label">Warnings</button>
+            </nav>
+
+            <div id="panel-recalls" class="panel">
+                <div class="controls">
+                    <input id="recall-filter" type="search" placeholder="Filter by reason, company, or product..." />
+                    <select id="class-filter" aria-label="Severity class">
+                        <option value="">All classes</option>
+                        <option value="Class I">Class I (most serious)</option>
+                        <option value="Class II">Class II</option>
+                        <option value="Class III">Class III</option>
+                    </select>
+                    <select id="status-filter" aria-label="Recall status">
+                        <option value="">All statuses</option>
+                        <option value="Ongoing">Ongoing</option>
+                        <option value="Completed">Completed</option>
+                        <option value="Terminated">Terminated</option>
+                    </select>
+                    <select id="sort" aria-label="Sort recalls">
+                        <option value="date-desc">Newest first</option>
+                        <option value="date-asc">Oldest first</option>
+                        <option value="class">Most serious first</option>
+                        <option value="firm">Company (A-Z)</option>
+                    </select>
+                </div>
+                <p id="recall-count" class="muted"></p>
+                <div id="recall-list"></div>
+            </div>
+
+            <div id="panel-effects" class="panel hidden"></div>
+            <div id="panel-label" class="panel hidden"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>Not medical advice.</strong>This tool is for information only. Always ask a doctor or pharmacist about your medicine.</p>
+        <p>Data: <a href="https://open.fda.gov/apis/drug/" target="_blank" rel="noopener">openFDA Drug APIs</a> (U.S Food and Drug Administration).</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
