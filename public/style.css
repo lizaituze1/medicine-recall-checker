@@ -1,0 +1,275 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: #f3f6f9;
+    color: #1c2733;
+    line-height: 1.5;
+}
+
+header {
+    background: #0b5394;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    margin: 0 0 .4rem;
+}
+
+header p{
+    margin: 0;
+    opacity: .9;
+}
+
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1.25rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.muted {
+    color: #5b6773;
+    font-size: .9rem;
+}
+
+.search {
+    display: flex;
+    gap: .6rem;
+}
+
+.search input {
+    flex: 1;
+    padding: .8rem 1rem;
+    font-size: 1.05rem;
+    border: 1px solid #b9c4cf;
+    border-radius: 8px;
+}
+
+.search button {
+    padding: .8rem 1.5rem;
+    font-size: 1rem;
+    background: #0b5394;
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.search button:hover {
+    background: #09427a;
+}
+
+.examples {
+    margin: .8rem 0;
+    font-size: .9rem;
+    color: #5b6773;
+}
+
+.chip {
+    margin-left: .3rem;
+    padding: .25rem .7rem;
+    border: 1px solid #b9c4cf;
+    background: #fff;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.chip:hover {
+    background: #e6eef6;
+}
+
+#status {
+    min-height: 1.5rem;
+    text-align: center;
+    color: #44505c;
+}
+
+#status.error {
+    color: #b00020;
+    font-weight: 600;
+}
+
+.tabs {
+    display: flex;
+    gap: .4rem;
+    border-bottom: 2px solid #d5dde5;
+    margin-bottom: 1rem;
+}
+
+.tab {
+    padding: .6rem 1.1rem;
+    border: 0;
+    background: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+}
+
+.tab.active {
+    border-bottom-color: #0b5394;
+    color: #0b5394;
+    font-weight: 600;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    margin-bottom: .6rem;
+}
+
+.controls input {
+    flex: 1 1 240px;
+}
+
+.controls input,
+.controls select {
+    padding: .6rem .8rem;
+    border: 1px solid #b9c4cf;
+    border-radius: 8px;
+    font-size: .95rem;
+}
+
+.recall {
+    background: #fff;
+    border-left: 6px solid #999;
+    border-radius: 8px;
+    padding: .9rem 1rem;
+    margin-bottom: .8rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+}
+
+.recall.c1 {
+    border-left-color: #c62828;
+}
+
+.recall.c2 {
+    border-left-color: #ef8f00;
+}
+
+.recall.c3 {
+    border-left-color: #2e7d32;
+}
+
+.recall h3 {
+    margin: 0 0 .3rem;
+    font-size: 1rem;
+}
+
+.recall p {
+    margin: .25rem 0;
+    font-size: .92rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: .1rem .6rem;
+    border-radius: 999px;
+    font-size: .78rem;
+    font-weight: 600;
+    color: #fff;
+    background: #777;
+    margin-right: .4rem;
+}
+
+.badge.c1 {
+    background: #c62828;
+}
+
+.badge.c2 {
+    background: #ef8f00;
+}
+
+.badge.c3 {
+    background: #2e7d32;
+}
+
+.badge.status {
+    background: #546e7a;
+}
+
+details {
+    margin-top: .4rem;
+    font-size: .88rem;
+    color: #44505c;
+}
+
+summary {
+    cursor: pointer;
+    color: #0b5394;
+}
+
+.bar-row {
+    display: grid;
+    grid-template-columns: 200px 1fr 70px;
+    gap: .6rem;
+    align-items: center;
+    margin: .4rem 0;
+    font-size: .92rem;
+}
+
+.bar-track {
+    background: #e1e8ef;
+    border-radius: 6px;
+    height: 18px;
+    overflow: hidden;
+}
+.bar-fill {
+    background: #0b5394;
+    height: 100%;
+}
+
+.bar-count {
+    text-align: right;
+    color: #5b6773;
+}
+
+.warn-box {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: .9rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+}
+
+.warn-box h3 {
+    margin: 0 0 .4rem;
+}
+
+.warn-box.boxed {
+    border: 2px solid #c62828;
+    background: #fff5f5;
+}
+
+.warn-box p {
+    margin: 0;
+    white-space: pre-wrap;
+    font-size: .92rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    color: #5b6773;
+    font-size: .88rem;
+}
+
+@media (max-width: 600px) {
+    .search {
+        flex-direction: column;
+    }
+
+    .bar-row {
+        grid-template-columns: 1fr;
+    }
+}
