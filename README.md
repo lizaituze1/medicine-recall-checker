@@ -6,6 +6,7 @@ A web app that lets people look up a medicine and see its FDA recalls, the most-
 
 -**Demo video:** https://youtu.be/R0SmqZT1HbY
 -**Load balancer address:** https://ituzeliza.tech (7304-lb-01, 13.135.71.98)
+-**AI usage report:** [CodePause export](docs/codepause-export-1795648918831.json)
 
 ## Features
 
