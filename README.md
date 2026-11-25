@@ -5,7 +5,7 @@ A web app that lets people look up a medicine and see its FDA recalls, the most-
 **Not medical advice.** This tool is for information only. Always ask a doctor or pharmacist.
 
 -**Demo video:**
--**Load balancer address:** http://localhost:8082 (lb-01, from the lab machine)
+-**Load balancer address:** https://ituzeliza.tech (7304-lb-01, 13.135.71.98)
 
 ## Features
 
@@ -60,7 +60,7 @@ Browser -> lb-01 (Nginx, port 80) -> web-01:3000
 Repeat on each web server:
 
 ```bash
-ssh -i ~/.ssh/web_infra_lab ubuntu@localhost -p 2211
+ssh -i ~/.ssh/web_infra_lab ubuntu@35.176.151.217
 
 sudo apt update
 sudo apt install -y git curl
@@ -82,7 +82,7 @@ PM2 keeps the app running after the SSH session closes.
 ### 2. Configure the load balancer on lb-01
 
 ```bash
-ssh -i ~/.ssh/web_infra_lab ubuntu@localhost -p 2210
+ssh -i ~/.ssh/web_infra_lab ubuntu@13.135.71.98
 
 sudo apt update
 sudo apt install -y nginx
@@ -96,10 +96,10 @@ The config is in [`deploy/nginx-lb.conf`](deploy/nginx-lb.conf). It defines an `
 ### 3. Test the load balancer
 
 ```bash
-for i in $(seq 1 10); do curl -sI http://localhost/ | grep -i x-served-by; sleep 0.5; done
+for i in $(seq 1 10); do curl -sI https://ituzeliza.tech/ | grep -i x-served-by; sleep 0.5; done
 ```
 
-Result: `X-Served-By` alternate `web-02`, `web-01`, `web-02`, `web-01`, and so on, which confirms that traffic is shared equally. The app also works in the browser through the load balancer at http://localhost:8082.
+Result: `X-Served-By` alternate `web-02`, `web-01`, `web-02`, `web-01`, and so on, which confirms that traffic is shared equally. The app also works in the browser through the load balancer at https://ituzeliza.tech.
 
 ## Challenges and how I solved them
 
