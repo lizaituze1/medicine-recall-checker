@@ -4,7 +4,7 @@ A web app that lets people look up a medicine and see its FDA recalls, the most-
 
 **Not medical advice.** This tool is for information only. Always ask a doctor or pharmacist.
 
--**Demo video:**
+-**Demo video:** https://youtu.be/R0SmqZT1HbY
 -**Load balancer address:** https://ituzeliza.tech (7304-lb-01, 13.135.71.98)
 
 ## Features
